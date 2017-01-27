@@ -1,1 +1,1 @@
-# Application
+# js-boilerplate
