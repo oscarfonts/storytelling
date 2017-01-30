@@ -21,7 +21,10 @@ module.exports = {
         filename: 'bundle.js'
     },
     resolve: {
-      extensions: [".js", ".jsx"]
+        extensions: [".js", ".jsx"],
+        alias: {
+            webworkify: 'webworkify-webpack-dropin'
+        }
     },
     module: {
         rules: [{
@@ -36,7 +39,11 @@ module.exports = {
             }, {
                 loader: 'eslint-loader'
             }]
-          }]
+        },{
+            include: /node_modules\/mapbox-gl.*\.js$/,
+            loader: 'transform-loader?brfs-babel',
+            enforce: 'post'
+        }]
     },
     plugins: debug ? [
         htmlPlugin,
@@ -49,5 +56,8 @@ module.exports = {
     devtool: debug ? 'inline-source-map' : false,
     devServer: {
         contentBase: outputPath
+    },
+    node: {
+      fs: 'empty'
     }
 };
