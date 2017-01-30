@@ -8,7 +8,7 @@
     "start": "webpack-dev-server --inline --hot",
     "test": "karma start",
     "build": "NODE_ENV=production webpack -p",
-    "deploy": "npm run build && gh-pages -d src -s '*'",
+    "deploy": "npm run build && gh-pages -d dist -s '*'",
     "lint": "eslint src"
   },
   "author": "Oscar Fonts <oscar.fonts@geomati.co>",
