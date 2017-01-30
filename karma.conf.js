@@ -23,8 +23,8 @@ module.exports = function(config) {
     logLevel: config.LOG_INFO,
     autoWatch: true,
     // available browser launchers: https://npmjs.org/browse/keyword/karma-launcher
-    browsers: ['Chrome'],
-    singleRun: false,
+    browsers: process.env.TRAVIS ? ['PhantomJS'] : ['Chrome'],
+    singleRun: process.env.TRAVIS ? true : false,
     concurrency: Infinity
   })
 };
