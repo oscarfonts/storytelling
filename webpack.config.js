@@ -7,7 +7,10 @@ var entryPath = path.join(__dirname, 'src');
 var outputPath = path.join(__dirname, 'dist');
 
 var htmlPlugin = new HtmlWebpackPlugin({
-    title: 'storytelling'
+    title: 'storytelling',
+    files: {
+        "css": "https://fonts.googleapis.com/css?family=Roboto:300,400,500"
+    }
 });
 
 module.exports = {
