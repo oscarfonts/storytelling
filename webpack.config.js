@@ -7,7 +7,7 @@ var entryPath = path.join(__dirname, 'src');
 var outputPath = path.join(__dirname, 'dist');
 
 var htmlPlugin = new HtmlWebpackPlugin({
-    title: 'js-boilerplate'
+    title: 'storytelling'
 });
 
 module.exports = {
@@ -35,7 +35,9 @@ module.exports = {
             }]
           }]
     },
-    plugins: debug ? [ htmlPlugin ] : [
+    plugins: debug ? [
+        htmlPlugin,
+    ] : [
         htmlPlugin,
         new webpack.optimize.UglifyJsPlugin({
             sourceMap: true

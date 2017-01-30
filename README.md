@@ -1,12 +1,4 @@
-# js-boilerplate
+#storytelling
 
-[![Build Status](https://travis-ci.org/oscarfonts/js-boilerplate.svg?branch=master)](https://travis-ci.org/oscarfonts/js-boilerplate)
+[![Build Status](https://travis-ci.org/oscarfonts/storytelling.svg?branch=master)](https://travis-ci.org/oscarfonts/storytelling)
 
-* [x] webpack
-* [x] babel
-* [x] react
-* [x] eslint
-* [x] karma
-* [ ] coverage (failed)
-* [x] gh-pages
-* [x] travis

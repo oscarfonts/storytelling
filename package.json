@@ -1,8 +1,8 @@
 {
-  "name": "js-boilerplate",
+  "name": "storytelling",
   "version": "0.0.1",
   "private": true,
-  "description": "js-boilerplate",
+  "description": "storytelling",
   "main": "src/index.js",
   "scripts": {
     "start": "webpack-dev-server --inline --hot",
