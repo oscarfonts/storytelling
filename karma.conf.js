@@ -5,15 +5,16 @@ module.exports = function(config) {
     basePath: '',
     frameworks: ['jasmine'],
     files: [
-      'tests/**/*Spec.js',
-      'tests/**/*Spec.jsx'
+      'tests/**/*Spec.js'
     ],
     // available preprocessors: https://npmjs.org/browse/keyword/karma-preprocessor
     preprocessors: {
-      'tests/**/*Spec.js': ['webpack'],
-      'tests/**/*Spec.jsx': ['webpack']
+      'tests/**/*Spec.js': ['webpack']
     },
     webpack: webpackConfig,
+    webpackServer: {
+      noInfo: true
+    },
     // available reporters: https://npmjs.org/browse/keyword/karma-reporter
     reporters: ['mocha'],
     port: 9876,
@@ -22,8 +23,8 @@ module.exports = function(config) {
     logLevel: config.LOG_INFO,
     autoWatch: true,
     // available browser launchers: https://npmjs.org/browse/keyword/karma-launcher
-    browsers: ['PhantomJS'],
-    singleRun: true,
+    browsers: ['Chrome'],
+    singleRun: false,
     concurrency: Infinity
   })
-}
+};

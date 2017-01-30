@@ -12,20 +12,27 @@ var htmlPlugin = new HtmlWebpackPlugin({
 
 module.exports = {
     context: entryPath,
-    entry: './index.js',
+    entry: './index.jsx',
     output: {
         path: outputPath,
         filename: 'bundle.js'
     },
+    resolve: {
+      extensions: [".js", ".jsx"]
+    },
     module: {
         rules: [{
-              test: /\.(js|jsx)$/,
-              exclude: /(node_modules)/,
-              loader: 'babel-loader',
-              options: {
-                  presets: ['react', 'es2015'],
-                  plugins: ['react-html-attrs', 'transform-class-properties']
-              }
+            test: /\.(js|jsx)$/,
+            exclude: /(node_modules)/,
+            use: [{
+                loader: 'babel-loader',
+                options: {
+                    presets: ['react', 'es2015'],
+                    plugins: ['react-html-attrs', 'transform-class-properties']
+                }
+            }, {
+                loader: 'eslint-loader'
+            }]
           }]
     },
     plugins: debug ? [ htmlPlugin ] : [
