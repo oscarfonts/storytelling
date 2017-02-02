@@ -6,17 +6,33 @@ import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
 
 import './styles.css';
 import Map from './components/Map';
-import Layer from './components/Layer';
+import GeoJSON from './components/GeoJSON';
 
 injectTapEventPlugin();
+
+const rootElement = document.createElement('div');
+document.body.appendChild(rootElement);
+
+function getParameterByName(paramName) {
+  const url = window.location.href;
+  const name = paramName.replace(/[[\]]/g, '\\$&');
+
+  const regex = new RegExp('[?&]' + name + '(=([^&#]*)|&|#|$)'); // eslint-disable-line
+  const results = regex.exec(url);
+  if (!results) return undefined;
+  if (!results[2]) return '';
+  return decodeURIComponent(results[2].replace(/\+/g, ' '));
+}
+
+const src = getParameterByName('src');
 
 ReactDOM.render(
   <MuiThemeProvider>
     <Map>
-      <Layer />
+      <GeoJSON src={src} />
     </Map>
   </MuiThemeProvider>,
-  document.body,
+  rootElement,
 );
 
 export default true;
