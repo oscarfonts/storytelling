@@ -6,12 +6,15 @@ import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
 
 import './styles.css';
 import Map from './components/Map';
+import Layer from './components/Layer';
 
 injectTapEventPlugin();
 
 ReactDOM.render(
   <MuiThemeProvider>
-    <Map />
+    <Map>
+      <Layer />
+    </Map>
   </MuiThemeProvider>,
   document.body,
 );
